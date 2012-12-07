@@ -9,13 +9,13 @@ execute 'install--sass' do
     command 'gem install sass'
 end
 
-unless FileUtils.exists?(lib)
+unless File.exists?(lib)
     FileUtils.mkdir(lib)
     #Dir.mkdir(lib)
     puts "Created #{lib}"
 end
 
-unless FileUtils.exists?(sassPath)
+unless File.exists?(sassPath)
     FileUtils.mkdir(sassPath)
     puts "Created #{sassPath}"
 end

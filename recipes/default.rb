@@ -9,10 +9,12 @@ end
 
 unless File.exists?(lib)
     Dir.mkdir(lib)
+    puts "Created #{lib}"
 end
 
 unless File.exists?(sassPath)
     Dir.mkdir(sassPath)
+    puts "Created #{sassPath}"
 end
 
 execute 'start-sass-watch' do

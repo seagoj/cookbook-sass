@@ -3,20 +3,20 @@ sassPath="#{lib}/sass"
 
 include_recipe 'ruby'
 
+require 'fileutils'
+
 execute 'install--sass' do
     command 'gem install sass'
 end
 
-puts Dir.pwd
-
-unless File.exists?(lib)
-    Dir.mkdir(lib)
+unless FileUtils.exists?(lib)
+    FileUtils.mkdir(lib)
+    #Dir.mkdir(lib)
     puts "Created #{lib}"
 end
 
-unless File.exists?(sassPath)
-    Dir.chdir(lib)
-    Dir.mkdir('sass')
+unless FileUtils.exists?(sassPath)
+    FileUtils.mkdir(sassPath)
     puts "Created #{sassPath}"
 end
 

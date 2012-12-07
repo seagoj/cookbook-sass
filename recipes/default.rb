@@ -4,7 +4,7 @@ sassPath="#{lib}/sass"
 include_recipe 'ruby'
 
 execute 'install--sass' do
-    command 'ruby install sass'
+    command 'gem install sass'
 end
 
 execute 'start sass watch' do

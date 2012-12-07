@@ -1,5 +1,5 @@
 lib="/vagrant/lib"
-sassPath="#{lib}/sass"
+sassPath="/vagrant/lib/sass"
 
 include_recipe 'ruby'
 

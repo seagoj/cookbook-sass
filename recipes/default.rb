@@ -3,8 +3,6 @@ sassPath="#{lib}/sass"
 
 include_recipe 'ruby'
 
-require 'fileutils'
-
 execute 'install--sass' do
     command 'gem install sass'
 end

@@ -9,6 +9,7 @@ end
 
 unless (Dir.exists?(lib))
     Dir.mkdir(lib)
+end
 
 execute 'start sass watch' do
     command "sass --watch #{sassPath}:#{lib}" 

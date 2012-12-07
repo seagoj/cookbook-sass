@@ -7,13 +7,13 @@ execute 'install--sass' do
     command 'gem install sass'
 end
 
-unless (File.exists?(lib))
+# unless (File.exists?(lib))
     Dir.mkdir(lib)
-end
+# end
 
-unless (File.exists?(sassPath))
+# unless (File.exists?(sassPath))
     Dir.mkdir(sassPath)
-end
+# end
 
 execute 'start-sass-watch' do
     command "sass --watch #{sassPath}:#{lib}" 

@@ -1,5 +1,5 @@
 lib="/vagrant/lib"
-sassPath="/vagrant/lib/sass"
+sassPath="#{lib}/sass"
 
 include_recipe 'ruby'
 
@@ -13,7 +13,8 @@ unless File.exists?(lib)
 end
 
 unless File.exists?(sassPath)
-    Dir.mkdir(sassPath)
+    Dir.chdir(lib)
+    Dir.mkdir('sass')
     puts "Created #{sassPath}"
 end
 

@@ -7,6 +7,8 @@ execute 'install--sass' do
     command 'gem install sass'
 end
 
+puts Dir.pwd
+
 unless File.exists?(lib)
     Dir.mkdir(lib)
     puts "Created #{lib}"

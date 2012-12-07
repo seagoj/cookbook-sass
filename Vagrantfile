@@ -1,6 +1,13 @@
+require 'fileutils'
+
 Vagrant::Config.run do |config|
   cookbook_location = 'remote'
+  overwrite = true
 
+  if(overwrite) 
+    FileUtils.rm_rf('cookbooks')
+  end
+  
   cookbooks = {
     'ruby'=>'git@github.com:seagoj/cookbook-ruby.git',
     'sass'=>'git@github.com:seagoj/cookbook-sass.git'

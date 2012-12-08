@@ -7,10 +7,6 @@ execute 'install-sass' do
     command 'gem install sass'
 end
 
-execute 'install-foreman' do
-    command 'gem install foreman'
-end
-
 execute "mkdir-lib" do
     not_if {File.exists?(lib)}
     command "mkdir #{lib}"
@@ -24,6 +20,10 @@ end
 execute "create-procfile" do
     command "nohup sass --watch #{sassPath}:#{lib} &"
 end
+
+# execute 'install-foreman' do
+#     command 'gem install foreman'
+# end
 
 # execute "start-foreman" do
 #     command "foreman start -f /home/vagrant/Procfile &"

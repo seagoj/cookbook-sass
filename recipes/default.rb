@@ -3,8 +3,12 @@ sassPath="#{lib}/sass"
 
 include_recipe 'ruby'
 
-execute 'install--sass' do
+execute 'install-sass' do
     command 'gem install sass'
+end
+
+execute 'install-foreman' do
+    command 'gem install foreman'
 end
 
 execute "mkdir-lib" do
@@ -17,6 +21,14 @@ execute "mkdir-sass" do
     command "mkdir #{sassPath}"
 end
 
-execute 'start-sass-watch' do
-    command "sass --watch #{sassPath}:#{lib} &" 
+execute "create-procfile" do
+    command "echo 'sass: sass --watch #{sassPath}:#{lib}' >> ~/Procfile"
 end
+
+# execute "create-sass-service" do
+#     command "echo 'sass --watch #{sassPath}:#{lib}'" >> "~/sass.sh"
+# end
+
+# execute 'start-sass-watch' do
+#     command "chmod a+x ~/sass.sh && ~/sass.sh &"
+# end

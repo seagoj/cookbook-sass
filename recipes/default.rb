@@ -22,7 +22,11 @@ execute "mkdir-sass" do
 end
 
 execute "create-procfile" do
-    command "echo 'sass: sass --watch #{sassPath}:#{lib}' >> ~/Procfile"
+    command "echo 'sass: sass --watch #{sassPath}:#{lib}' >> /home/vagrant/Procfile"
+end
+
+execute "start-foreman" do
+    command "foreman start -f /home/vagrant/Procfile"
 end
 
 # execute "create-sass-service" do

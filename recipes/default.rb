@@ -19,7 +19,7 @@ directory "#{node[:sass][:lib]}/sass" do
 end
 
 cookbook_file "#{node[:sass][:lib]}/sass/test.scss" do
-    not_if File.exists?("#{node[:sass][:lib]}/sass/test.scss"
+    not_if File.exists?("#{node[:sass][:lib]}/sass/test.scss")
     owner node[:sass][:user]
     group node[:sass][:group]
 end

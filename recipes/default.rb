@@ -6,6 +6,11 @@ execute 'install-sass' do
     command 'gem install sass'
 end
 
+execute 'install-rb-inotify' do
+    user node[:sass][:user]
+    command "gem install --version '~> 0.9' rb-inotify"
+end
+
 directory node[:sass][:lib] do
     not_if {File.exists?(node[:sass][:lib])}
     owner node[:sass][:user]

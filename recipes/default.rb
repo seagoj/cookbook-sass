@@ -1,4 +1,5 @@
 include_recipe 'ruby'
+package 'make'
 
 execute 'install-sass' do
     user node[:sass][:user]

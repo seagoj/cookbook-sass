@@ -1,8 +1,7 @@
 include_recipe 'ruby'
 
 execute 'install-sass' do
-    owner node[:sass][:user]
-    group node[:sass][:group]
+    user node[:sass][:user]
     command 'gem install sass'
 end
 

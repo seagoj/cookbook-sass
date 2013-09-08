@@ -26,6 +26,6 @@ cookbook_file "#{node[:sass][:lib]}/sass/test.scss" do
     group node[:sass][:group]
 end
 
-execute "Start SASS conversion" do
-    command "nohup sass --watch #{node[:sass][:lib]/sass}:#{node[:sass][:lib]} &"
-end
+#execute "Start SASS conversion" do
+#    command "nohup sass --watch #{node[:sass][:lib]/sass}:#{node[:sass][:lib]} &"
+#end
